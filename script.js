@@ -33,3 +33,30 @@ closeButton.addEventListener("click", () => {
   searchOverlay.classList.add("hidden");
   searchInput.value = "";
 });
+
+const footerLinks = [
+  { text: "Kontakt", href: "mailto:giarddesign@kontakt.pl" },
+  { text: "Instagram", href: "#" },
+  { text: "Facebook", href: "#" },
+  { text: "Linkedln", href: "#" },
+];
+
+const footerLinksContainer = document.getElementById("footer-links");
+
+footerLinks.forEach((link) => {
+  const anchor = document.createElement("a");
+  anchor.href = link.href;
+  anchor.target = "_blank";
+  anchor.rel = "noopener noreferrer";
+  anchor.textContent = link.text;
+  anchor.classList.add(
+    "cursor-pointer",
+    "text-sm",
+    "leading-6",
+    "hover:text-primary",
+    "transition",
+    "duration-300",
+    "ease-in-out"
+  );
+  footerLinksContainer.appendChild(anchor);
+});
