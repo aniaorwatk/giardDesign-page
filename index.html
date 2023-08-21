@@ -14,9 +14,11 @@
             },
             screens: {
               xl: "1262px",
+              xxl: "1440px",
             },
             spacing: {
               5: "5px",
+              120: "120px",
             },
             keyframes: {
               rotate360: {
@@ -56,7 +58,13 @@
               >
                 Oferta
               </a>
-              <svg id="offerArrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" class="hover:fill-primary cursor-pointer">
+              <svg
+                id="offerArrow"
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                class="hover:fill-primary cursor-pointer"
+              >
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -242,7 +250,56 @@
         <section class="m-auto max-w-screen-xl">Galeria projektów</section>
         <section class="m-auto max-w-screen-xl">Instagram</section>
       </main>
-      <footer class="m-auto max-w-screen-xl">Footer</footer>
+      <footer
+        class="m-auto max-w-screen-xxl items-center justify-between bg-black text-lightGray py-20 flex-col"
+      >
+        <div class="flex m-auto items-center justify-center flex-col gap-16">
+          <div class="w-9/12 items-center justify-between flex">
+            <img src="assets/whiteLogo.svg" alt="Giard Design Logo" />
+            <div class="flex gap-6 items-center">
+              <p>Daj znać, co możemy dla Ciebie zrobić!</p>
+              <a
+                href="mailto:giarddesign@kontakt.pl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex items-center gap-2 bg-primary text-16px rounded-full px-22 py-[12px] pr-[22px] pl-[22px] cursor-pointer hover:bg-white hover:text-primary transition duration-300 ease-in-out"
+              >
+                Skontaktuj się z nami
+              </a>
+            </div>
+          </div>
+          <div class="w-9/12">
+            <span class="block w-full h-1 bg-lightGray"></span>
+          </div>
+          <div class="w-9/12 items-center justify-between flex">
+            <div class="items-center flex gap-12" id="footer-links">
+            </div>
+            <div class="items-center flex gap-12">
+              <a
+                href="tel:000000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cursor-pointer text-sm leading-6 hover:text-primary transition duration-300 ease-in-out"
+                >000-000-000</a
+              >
+              <a
+                href="mailto:giarddesign@kontakt.pl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cursor-pointer text-sm leading-6 hover:text-primary transition duration-300 ease-in-out"
+                >giarddesign@kontakt.pl</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="w-9/12 items-center justify-between flex m-auto mt-120">
+          <p>Prawa zastrzeżone © 2022</p>
+          <div class="flex gap-4">
+            <p>made by</p>
+            <img src="assets/logoAdRespect.svg" alt="AdRespect Logo" />
+          </div>
+        </div>
+      </footer>
     </div>
     <script src="script.js"></script>
   </body>
