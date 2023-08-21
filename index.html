@@ -3,30 +3,160 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1B5B31",
+              lightGray: "#F5F0EC",
+            },
+            screens: {
+              xl: "1262px",
+            },
+            spacing: {
+              5: "5px",
+            },
+            keyframes: {
+              rotate360: {
+                "0%": { transform: "rotate(0)" },
+                "100%": { transform: "rotate(360deg)" },
+              },
+            },
+            animation: {
+              rotate360: "rotate360 0.3s linear",
+            },
+          },
+        },
+      };
+    </script>
+    <link href="styles.css" rel="stylesheet" />
     <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
     />
     <title>Giard Design</title>
   </head>
   <body>
     <div class="">
       <header
-        class="flex items-center justify-between p-6 m-auto max-w-screen-xl"
+        class="flex items-center justify-between py-6 m-auto max-w-screen-xl"
       >
         <img src="assets/logo.svg" alt="Giard Design Logo" />
         <nav class="flex">
           <ul class="flex gap-12 w-auto">
-            <li class="flex">
-              <a href="#">Oferta</a>
-              <img src="assets/offerArrow.svg" alt="Search Icon" />
+            <li
+              class="relative flex gap-5 text-sm leading-6 items-center justify-center"
+            >
+              <a
+                href="#"
+                class="transition-colors hover:text-primary hover:underline"
+                id="offerLink"
+              >
+                Oferta
+              </a>
+              <svg id="offerArrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" class="hover:fill-primary cursor-pointer">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M2.13017 4.81427C1.95661 4.6407 1.95661 4.3593 2.13017 4.18573C2.28796 4.02794 2.53487 4.0136 2.70887 4.1427L2.75871 4.18573L6 7.42681L9.24129 4.18573C9.39907 4.02794 9.64599 4.0136 9.81998 4.1427L9.86983 4.18573C10.0276 4.34352 10.042 4.59043 9.91286 4.76442L9.86983 4.81427L6.31427 8.36983C6.15648 8.52761 5.90957 8.54196 5.73558 8.41286L5.68573 8.36983L2.13017 4.81427Z"
+                  class="hover:fill-primary"
+                />
+              </svg>
+              <div
+                id="offerDropdown"
+                class="hidden absolute top-8 left-0 mt-1 p-2 bg-white border border-gray-300 shadow-lg z-10"
+              >
+                <a
+                  href="#"
+                  class="transition-colors hover:text-primary hover:underline"
+                  >Projekty</a
+                >
+                <a
+                  href="#"
+                  class="transition-colors hover:text-primary hover:underline"
+                  >Wizualizacje</a
+                >
+                <a
+                  href="#"
+                  class="transition-colors hover:text-primary hover:underline"
+                  >Realizacje</a
+                >
+              </div>
             </li>
-            <li><a href="#">O firmie</a></li>
-            <li><a href="#">Realizacje</a></li>
-            <li><a href="#">Kontakt</a></li>
-            <li>
-              <img src="assets/search.svg" alt="Search Icon" />
+
+            <li class="text-sm leading-6 items-center">
+              <a
+                href="#"
+                class="transition-colors hover:text-primary hover:underline text-sm leading-4"
+              >
+                O firmie
+              </a>
             </li>
+            <li class="text-sm leading-6 items-center">
+              <a
+                href="#"
+                class="transition-colors hover:text-primary hover:underline text-sm leading-4"
+              >
+                Realizacje
+              </a>
+            </li>
+            <li class="text-sm leading-6 items-center">
+              <a
+                href="#"
+                class="transition-colors hover:text-primary hover:underline text-sm leading-4"
+              >
+                Kontakt
+              </a>
+            </li>
+            <li class="relative flex gap-5">
+              <img
+                id="searchIcon"
+                src="assets/search.svg"
+                class="cursor-pointer"
+                alt="Search Icon"
+              />
+            </li>
+            <div
+              id="searchOverlay"
+              class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50 hidden"
+            >
+              <div
+                class="bg-primary p-6 rounded shadow-md relative flex flex-col justify-center items-center text-lightGray h-[300px] gap-4"
+              >
+                <h2 class="text-lg mb-4">Wyszukaj na stronie</h2>
+                <input
+                  id="searchInput"
+                  type="text"
+                  class="border px-22 py-[12px] pr-[22px] pl-[22px] w-full mb-4 text-center text-black rounded-full"
+                  placeholder="Wyszukaj..."
+                />
+                <button
+                  type="button"
+                  id="closeButton"
+                  class="absolute top-0 right-0 w-8 h-8 mt-2 mr-2 flex items-center justify-center text-white hover:text-red-400 hover:animate-rotate360 transition cursor-pointer duration-700 ease-in-out rounded-full border-2 border-white hover:border-red-400"
+                >
+                  X
+                </button>
+                <button
+                  class="group flex items-center gap-2 bg-primary text-16px rounded-full border border-lightGray px-22 py-[12px] pr-[22px] pl-[22px] cursor-pointer hover:bg-white hover:text-primary transition duration-300 ease-in-out"
+                >
+                  Szukaj
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    class="fill-lightGray group-hover:fill-primary transition duration-300 ease-in-out"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.99528 -1.56518e-06L7.09959 0.895696L13.5769 7.36358L-8.74229e-07 7.36358L-7.62954e-07 8.63642L13.5675 8.63642L7.09959 15.1043L7.99529 16L16 7.99528L7.99528 -1.56518e-06Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
           </ul>
         </nav>
       </header>
@@ -69,7 +199,7 @@
             </div>
           </div>
         </section>
-        <section class="max-w-screen-xl m-auto bg-pink-300">oferta</section>
+        <section class="m-auto bg-pink-300 max-w-screen-xl">oferta</section>
         <section class="flex bg-purple-300 relative">
           <div class="absolute w-full h-full">
             <div class="container m-auto h-full">
@@ -109,10 +239,10 @@
             </div>
           </div>
         </section>
-        <section class="max-w-screen-xl m-auto">Galeria projektów</section>
-        <section class="max-w-screen-xl m-auto">Instagram</section>
+        <section class="m-auto max-w-screen-xl">Galeria projektów</section>
+        <section class="m-auto max-w-screen-xl">Instagram</section>
       </main>
-      <footer class="max-w-screen-xl m-auto">Footer</footer>
+      <footer class="m-auto max-w-screen-xl">Footer</footer>
     </div>
     <script src="script.js"></script>
   </body>
