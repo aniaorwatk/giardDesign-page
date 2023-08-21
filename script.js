@@ -60,3 +60,16 @@ footerLinks.forEach((link) => {
   );
   footerLinksContainer.appendChild(anchor);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  Macy.init({
+    container: "#macy-container",
+    trueOrder: false,
+    waitForImages: false,
+    columns: 3,
+    breakAt: {
+      1200: 2,
+      768: 1,
+    },
+  });
+});

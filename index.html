@@ -11,6 +11,9 @@
             colors: {
               primary: "#1B5B31",
               lightGray: "#F5F0EC",
+              lightOrange: "#DCC1AB",
+              customDCC1AB: "#DCC1AB",
+              customD6B79E: "#D6B79E",
             },
             screens: {
               xl: "1262px",
@@ -21,6 +24,8 @@
               120: "120px",
               60: "60px",
               110: "110px",
+              1000: "1000px",
+              1824: "1824px",
             },
             keyframes: {
               rotate360: {
@@ -35,6 +40,7 @@
         },
       };
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/macy/2.1.6/macy.min.js"></script>
     <link href="styles.css" rel="stylesheet" />
     <link
       rel="stylesheet"
@@ -253,7 +259,51 @@
             </div>
           </div>
         </section>
-        <section class="m-auto max-w-screen-xl">Galeria projektów</section>
+        <section class="m-auto max-w-screen-xxl">Galeria projektów</section>
+        <section
+          class="m-auto max-w-screen-xxl max-h-1824 relative overflow-hidden bg-lightOrange pb-11"
+        >
+          <div class="m-auto pt-120 flex justify-between"></div>
+          <h2 class="text-2xl font-semibold mb-6">Galeria projektów</h2>
+          <div class="macy-container flex justify-between">
+            <div class="macy-column">
+              <div class="macy-item">
+                <img src="/assets/gallery/photo1.png" alt="Zdjęcie 1" />
+              </div>
+              <div class="macy-item">
+                <img src="/assets/gallery/photo6.png" alt="Zdjęcie 6" />
+              </div>
+              <div class="macy-item">
+                <img src="/assets/gallery/photo7.png" alt="Zdjęcie 7" />
+              </div>
+            </div>
+            <div class="macy-column">
+              <div class="macy-item">
+                <img src="/assets/gallery/photo2.png" alt="Zdjęcie 1" />
+              </div>
+              <div class="macy-item">
+                <img src="/assets/gallery/photo4.png" alt="Zdjęcie 4" />
+              </div>
+              <div class="macy-item">
+                <img src="/assets/gallery/photo8.png" alt="Zdjęcie 8" />
+              </div>
+            </div>
+            <div class="macy-column">
+              <div class="macy-item">
+                <img src="/assets/gallery/photo3.png" alt="Zdjęcie 3" />
+              </div>
+              <div class="macy-item">
+                <img src="/assets/gallery/photo5.png" alt="Zdjęcie 5" />
+              </div>
+              <div class="macy-item">
+                <img src="/assets/gallery/photo9.png" alt="Zdjęcie 9" />
+              </div>
+            </div>
+            <div
+              class="gradientGallery w-full h-1000 absolute bottom-11 z-20"
+            ></div>
+          </div>
+        </section>
         <section class="m-auto max-w-screen-xxl py-60">
           <div
             class="w-9/12 items-center justify-between flex m-auto px-110 py-120 bg-primary text-lightGray gap-16"
