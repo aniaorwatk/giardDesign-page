@@ -19,6 +19,8 @@
             spacing: {
               5: "5px",
               120: "120px",
+              60: "60px",
+              110: "110px",
             },
             keyframes: {
               rotate360: {
@@ -37,6 +39,10 @@
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
     />
     <title>Giard Design</title>
   </head>
@@ -248,7 +254,28 @@
           </div>
         </section>
         <section class="m-auto max-w-screen-xl">Galeria projektów</section>
-        <section class="m-auto max-w-screen-xl">Instagram</section>
+        <section class="m-auto max-w-screen-xxl py-60">
+          <div
+            class="w-9/12 items-center justify-between flex m-auto px-110 py-120 bg-primary text-lightGray gap-16"
+          >
+            <h2 class="text-4xl fontMontserrat">
+              Zostańmy w kontakcie! Znajdziesz nas na
+              <span class="italic">Instagramie.</span>
+            </h2>
+
+            <div class="flex gap-6 flex-col">
+              <p>Śledź nasze najnowsze realizacje!</p>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex items-center bg-lightGray text-primary text-16px rounded-full border border-lightGray mr-auto px-22 py-[10px] pr-[22px] pl-[22px] cursor-pointer hover:bg-primary hover:text-lightGray transition duration-300 ease-in-out"
+              >
+                Instagram
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
       <footer
         class="m-auto max-w-screen-xxl items-center justify-between bg-black text-lightGray py-20 flex-col"
@@ -262,7 +289,7 @@
                 href="mailto:giarddesign@kontakt.pl"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group flex items-center gap-2 bg-primary text-16px rounded-full px-22 py-[12px] pr-[22px] pl-[22px] cursor-pointer hover:bg-white hover:text-primary transition duration-300 ease-in-out"
+                class="group flex items-center bg-primary text-16px rounded-full px-22 py-[12px] pr-[22px] pl-[22px] cursor-pointer hover:bg-white hover:text-primary transition duration-300 ease-in-out"
               >
                 Skontaktuj się z nami
               </a>
@@ -272,8 +299,7 @@
             <span class="block w-full h-1 bg-lightGray"></span>
           </div>
           <div class="w-9/12 items-center justify-between flex">
-            <div class="items-center flex gap-12" id="footer-links">
-            </div>
+            <div class="items-center flex gap-12" id="footer-links"></div>
             <div class="items-center flex gap-12">
               <a
                 href="tel:000000000"
@@ -296,7 +322,13 @@
           <p>Prawa zastrzeżone © 2022</p>
           <div class="flex gap-4">
             <p>made by</p>
-            <img src="assets/logoAdRespect.svg" alt="AdRespect Logo" />
+            <a
+              href="https://adrespect.pl/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="assets/logoAdRespect.svg" alt="AdRespect Logo" />
+            </a>
           </div>
         </div>
       </footer>
