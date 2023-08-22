@@ -27,7 +27,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
 }
 .macy-item {
   margin: 0;
@@ -44,4 +44,13 @@
     rgba(214, 183, 158, 0) 99.99%,
     rgba(214, 183, 158, 0) 100%
   );
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.gallery {
+  max-height: 1500px;
+}
+
+#expandIconExpand {
+  display: none;
 }

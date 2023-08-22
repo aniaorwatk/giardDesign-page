@@ -63,13 +63,65 @@ footerLinks.forEach((link) => {
 
 document.addEventListener("DOMContentLoaded", function () {
   Macy.init({
-    container: "#macy-container",
+    container: "#galleryContainer",
     trueOrder: false,
     waitForImages: false,
+    margin: 24,
     columns: 3,
     breakAt: {
       1200: 2,
-      768: 1,
+      800: 1,
     },
   });
+});
+
+const images = [
+  "/assets/gallery/photo1.png",
+  "/assets/gallery/photo6.png",
+  "/assets/gallery/photo7.png",
+  "/assets/gallery/photo2.png",
+  "/assets/gallery/photo4.png",
+  "/assets/gallery/photo8.png",
+  "/assets/gallery/photo3.png",
+  "/assets/gallery/photo5.png",
+  "/assets/gallery/photo9.png",
+];
+
+const columns = document.querySelectorAll(".macy-column");
+
+for (let i = 0; i < columns.length; i++) {
+  const column = columns[i];
+  for (let j = 0; j < 6; j++) {
+    const index = (i * 6 + j) % images.length;
+    const item = document.createElement("div");
+    item.classList.add("macy-item");
+    const img = document.createElement("img");
+    img.src = images[index];
+    img.alt = `Zdjęcie ${index + 1}`;
+    item.appendChild(img);
+    column.appendChild(item);
+  }
+}
+
+const expandButton = document.getElementById("expandButton");
+const expandText = document.getElementById("expandText");
+const expandIconCollapse = document.getElementById("expandIconCollapse");
+const expandIconExpand = document.getElementById("expandIconExpand");
+const galleryContainer = document.getElementById("galleryContainer");
+let isSectionExpanded = false;
+
+expandButton.addEventListener("click", () => {
+  if (isSectionExpanded) {
+    expandText.textContent = "Rozwiń";
+    expandIconCollapse.style.display = "block";
+    expandIconExpand.style.display = "none";
+    galleryContainer.style.maxHeight = "1500px";
+  } else {
+    expandText.textContent = "Zwiń";
+    expandIconCollapse.style.display = "none";
+    expandIconExpand.style.display = "block";
+    galleryContainer.style.maxHeight = "none";
+  }
+
+  isSectionExpanded = !isSectionExpanded;
 });
