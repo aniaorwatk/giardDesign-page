@@ -11,6 +11,9 @@
             colors: {
               primary: "#1B5B31",
               lightGray: "#F5F0EC",
+              lightOrange: "#DCC1AB",
+              customDCC1AB: "#DCC1AB",
+              customD6B79E: "#D6B79E",
             },
             screens: {
               xl: "1262px",
@@ -21,6 +24,8 @@
               120: "120px",
               60: "60px",
               110: "110px",
+              1000: "1000px",
+              1824: "1824px",
             },
             keyframes: {
               rotate360: {
@@ -35,6 +40,7 @@
         },
       };
     </script>
+  <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
     <link href="styles.css" rel="stylesheet" />
     <link
       rel="stylesheet"
@@ -253,7 +259,35 @@
             </div>
           </div>
         </section>
-        <section class="m-auto max-w-screen-xl">Galeria projektów</section>
+        <section class="m-auto max-w-screen-xxl">Galeria projektów</section>
+        <section class="m-auto max-w-screen-xxl relative overflow-hidden bg-lightOrange pb-11 flex-col gap-24" id="expandableSection">
+          <div class="pt-120 flex-col mb-24 ml-40">
+            <p class="text-primary text-xs mb-4">Realizacje</p>
+            <h2 class="text-5xl fontMontserrat">Nasze <span class="fontInter italic">Projekty</span></h2>
+          </div>
+          <div class="macy-container flex justify-between gallery"  id="galleryContainer">
+            <div class="macy-column" id="macy-column-1"></div>
+            <div class="macy-column" id="macy-column-2"></div>
+            <div class="macy-column" id="macy-column-3"></div>
+          </div>
+
+          <div class="gradientGallery w-full h-1000 absolute bottom-11 z-20 flex  items-end justify-center">
+
+            <button class="group flex items-center gap-2 text-16px rounded-full border border-black mb-11 px-22 py-[12px] pr-[22px] pl-[22px] cursor-pointer hover:border-primary hover:text-primary transition duration-300 ease-in-out" id="expandButton">
+              <span id="expandText">Rozwiń</span>
+              <svg id="expandIconExpand" width="16" height="16" xmlns="http://www.w3.org/2000/svg" class="fill-black group-hover:fill-primary transition duration-300 ease-in-out animate-bounce top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <g>
+                 <title>Layer 1</title>
+                 <path id="svg_1" d="m8,0l-0.90041,0.8957l6.47731,6.46788l-13.5769,0l0,1.27284l13.5675,0l-6.46791,6.46788l0.8957,0.8957l8.00471,-8.00472l-8,-7.99528z" transform="rotate(-90 8 8)" />
+                </g>
+               </svg>
+              <svg  id="expandIconCollapse" width="16" height="16" viewBox="0 0 16 16" class="fill-black group-hover:fill-primary transition duration-300 ease-in-out animate-bounce top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 8.49529L15.1043 7.59959L8.63642 14.0769L8.63642 0.5L7.36358 0.5L7.36358 14.0675L0.895699 7.59959L9.54553e-08 8.49529L8.00471 16.5L16 8.49529Z"/>
+              </svg>
+            </button>
+          </div> 
+          <div class="w-full h-6 absolute bottom-0 z-20 bg-lightOrange"></div>
+        </section>
         <section class="m-auto max-w-screen-xxl py-60">
           <div
             class="w-9/12 items-center justify-between flex m-auto px-110 py-120 bg-primary text-lightGray gap-16"
